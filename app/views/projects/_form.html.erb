@@ -1,0 +1,85 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :client_id %><br />
+     <%= collection_select(:project, :client_id, Client.all, :id, :name) %> 
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :project_type %><br />
+    <%= f.select :project_type, Project::PROJECT_TYPES, :prompt => "Select Type" %> 
+  </div>
+  <div class="field">
+    <%= f.label :contract_start %><br />
+    <%= f.text_field :contract_start, :class =>"jdpicker", :size => "20"  %>
+  </div>
+  <div class="field">
+    <%= f.label :contract_end %><br />
+    <%= f.date_select :contract_end %>
+  </div>
+  <div class="field">
+    <%= f.label :frequency %><br />
+    <%= f.select :frequency, Project::FREQUENCIES, :prompt => "Select Frequency" %>
+  </div>
+  <div class="field">
+    <%= f.label :sales_rep %><br />
+    <%= f.text_field :sales_rep %>
+  </div>
+  <div class="field">
+    <%= f.label :developer %><br />
+    <%= f.text_field :developer %>
+  </div>
+  <div class="field">
+    <%= f.label :ba %><br />
+    <%= f.text_field :ba %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :qa_date %><br />
+    <%= f.date_select :qa_date %>
+  </div>
+  <div class="field">
+    <%= f.label :changes_layouts %><br />
+    <%= f.text_area :changes_layouts, :cols => "30", :rows => "9" %>
+  </div>
+  <div class="field">
+    <%= f.label :changes_codes %><br />
+    <%= f.text_area :changes_codes, :cols => "30", :rows => "9" %>
+  </div>
+  <div class="field">
+    <%= f.label :rework %><br />
+    <%= f.select :rework, Project::REWORKS, :prompt => "Select Rework" %>
+  </div>
+  <div class="field">
+    <%= f.label :issue %><br />
+    <%= f.select :rework, Project::ISSUES, :prompt => "Select Issue" %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_area :notes, :cols => "30", :rows => "9" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,90 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Client:</b>
+  <%= @project.client_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @project.title %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @project.project_type %>
+</p>
+
+<p>
+  <b>Contract start:</b>
+  <%= @project.contract_start %>
+</p>
+
+<p>
+  <b>Contract end:</b>
+  <%= @project.contract_end %>
+</p>
+
+<p>
+  <b>Frequency:</b>
+  <%= @project.frequency %>
+</p>
+
+<p>
+  <b>Sales rep:</b>
+  <%= @project.sales_rep %>
+</p>
+
+<p>
+  <b>Developer:</b>
+  <%= @project.developer %>
+</p>
+
+<p>
+  <b>Ba:</b>
+  <%= @project.ba %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @project.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @project.end_date %>
+</p>
+
+<p>
+  <b>Qa date:</b>
+  <%= @project.qa_date %>
+</p>
+
+<p>
+  <b>Changes layouts:</b>
+  <%= @project.changes_layouts %>
+</p>
+
+<p>
+  <b>Changes codes:</b>
+  <%= @project.changes_codes %>
+</p>
+
+<p>
+  <b>Rework:</b>
+  <%= @project.rework %>
+</p>
+
+<p>
+  <b>Issue:</b>
+  <%= @project.issue %>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @project.notes %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

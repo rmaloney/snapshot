@@ -1,0 +1,32 @@
+<h1>Projects</h1>
+
+<table id="projects_table">
+  <tr>
+    <th><%= sortable "client", "Client" %></th>
+    <th><%= sortable "title", "Title" %></th>
+    <th><%= sortable "project_type", "Type" %></th>
+	<th><%= sortable "frequency", "Frequency" %></th>
+   
+
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr class="<%= cycle('even','odd') %>">
+    <td><%= project.client_id %></td>
+    <td><%= project.title %></td>
+    <td><%= project.project_type %></td>
+    <td><%= project.frequency %></td>
+ 
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>

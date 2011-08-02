@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>HMS Life Science Project Manager</title>
+
+<%= stylesheet_link_tag :all %>
+
+
+<%= javascript_include_tag :all %>
+
+
+
+
+<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+<!--[if IE 6]><link rel="stylesheet" type="text/css" href="/css/ie6.css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/css/ie.css" media="screen" /><![endif]-->
+<link rel="shortcut icon" href="images/favicon.ico" />
+
+
+</head>
+
+<body>
+
+
+<!-- Begin Container -->
+<div class="container_12">
+
+<!-- Begin Header -->
+	<div class="grid_12">
+		
+				
+			
+		<div id="header">
+			
+			
+			<div id ="navbar">
+				<ul class="nav">
+					
+					<li> <a href=""> My Clients</a> </li>
+					
+					<li><a href=""> Clients</a></li>
+					<li> <a href=""> My Projects </a> </li>
+					<li><a href=""> Projects </a </li>
+					
+					
+				</ul>
+			</div>
+					
+
+			
+			
+				
+
+		
+			<h1 id="branding">
+				<%= image_tag ('hms_logo.png') %>
+			</h1>
+			
+			
+			
+		</div>
+
+
+				
+	</div>
+
+
+<!--begin main -->
+<div id="main">
+	
+	
+  	
+					
+	<!-- main content -->
+	<div class="grid_8">
+		<div id="content">
+			<%= yield %>
+			
+		</div>
+	</div>
+	
+	<div class="grid_4">
+		<div id="sidebar">
+		
+		</div>
+	</div>
+	
+	
+	<!-- sidebar. This is removed for now. Add it back in by insert div .grid_4 followed by #sidebar -->
+	
+	
+	
+
+	<!-- end sidebar -->
+
+<!-- end main -->
+</div>
+
+
+
+
+<div class="clear"></div>
+
+
+
+
+
+<!-- begin footer -->
+<div class="grid_12" id="site_info">
+	
+	
+<div class="box">
+	<p>Copyright 2011 Health Market Science </p>
+
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+</html>
