@@ -345,8 +345,16 @@ padding: 3px;
 	font-size: 1em;
 	width: 55%;
 	padding: 3px;
-	float: left;
+	float: right;
+	margin-left: 4px;
 }
+
+#search_bar input{
+	border: 1px solid #444;
+}
+
+.defaultText { width: 300px; }
+.defaultTextActive { color: #a1a1a1; font-style: italic; }
 
 #keyword_search{
 	margin-top: 15px;	
