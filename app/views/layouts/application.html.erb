@@ -4,10 +4,11 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>HMS Life Science Project Manager</title>
 
-<%= stylesheet_link_tag :all %>
+
+<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "layout", "nav", "sexybuttons", "grid_fluid" %>
 
 
-<%= javascript_include_tag :all %>
+<%= javascript_include_tag :defaults %>
 
 
 
@@ -29,82 +30,69 @@
 
 <!-- Begin Header -->
 	<div class="grid_12">
+		<div id="user_nav" style="font-size: 12px;" class = "left">
+							<% if user_signed_in? %>  
+								Signed in as <%= current_user.email %>.  
+								<%= link_to "Sign out", destroy_user_session_path %>  | <%= link_to "Account Settings", edit_user_registration_path %>
+						  <% else %>  
+							<p> </p>  
+					<% end %> 
+				
+		</div>
 		
 				
 			
 		<div id="header">
-			
-			
 			<div id ="navbar">
-				<ul class="nav">
-					
-					<li> <a href=""> My Clients</a> </li>
-					
-					<li><a href=""> Clients</a></li>
-					<li> <a href=""> My Projects </a> </li>
-					<li><a href=""> Projects </a </li>
-					
-					
-				</ul>
-			</div>
-					
-
+					<ul class="nav">
+						<li> <a href="/clients"> My Clients</a> </li>
+						<li><a href="/clients"> Clients</a></li>
+						<li> <a href="/projects"> My Projects </a> </li>
+						<li><a href="/projects"> Projects </a </li>
+					</ul>
+				</div>
 			
 			
-				
-
-		
+			
 			<h1 id="branding">
 				<%= image_tag ('hms_logo.png') %>
 			</h1>
 			
+				<%= form_tag projects_path, :method => 'get', :id => "search_bar", :class => "left", :size => "30" do %>
+						<%= hidden_field_tag :direction, params[:direction] %>  
+						<%= hidden_field_tag :sort, params[:sort] %>
+						
+			<%= text_field_tag :search, params[:search], :id => "search_bar", :class => "default-value", :value => "Search..." %>
+							<button class="sexybutton sexysimple sexyred"> Search </button>
+			<% end %>
 			
-			
-		</div>
-
-
 				
+			
+				
+		</div>
+			
 	</div>
 
 
 <!--begin main -->
 <div id="main">
-	
-	
-  	
 					
 	<!-- main content -->
-	<div class="grid_8">
+	<div class="grid_12">
 		<div id="content">
 			<%= yield %>
 			
 		</div>
 	</div>
 	
-	<div class="grid_4">
-		<div id="sidebar">
+	<!-- Sidebar. Remove this to obtain a full length (12 column) layout -->
 		
-		</div>
-	</div>
-	
-	
-	<!-- sidebar. This is removed for now. Add it back in by insert div .grid_4 followed by #sidebar -->
-	
-	
-	
-
 	<!-- end sidebar -->
 
 <!-- end main -->
 </div>
 
-
-
-
 <div class="clear"></div>
-
-
-
 
 
 <!-- begin footer -->

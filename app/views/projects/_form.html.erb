@@ -21,15 +21,15 @@
   </div>
   <div class="field">
     <%= f.label :project_type %><br />
-    <%= f.select :project_type, Project::PROJECT_TYPES, :prompt => "Select Type" %> 
+    <%= f.select :project_type, Project::TYPES, :prompt => "Select Type" %> 
   </div>
   <div class="field">
     <%= f.label :contract_start %><br />
-    <%= f.text_field :contract_start, :class =>"jdpicker", :size => "20"  %>
+    <%= f.text_field :contract_start  %>
   </div>
   <div class="field">
     <%= f.label :contract_end %><br />
-    <%= f.date_select :contract_end %>
+    <%= f.text_field :contract_end %>
   </div>
   <div class="field">
     <%= f.label :frequency %><br />
@@ -49,15 +49,15 @@
   </div>
   <div class="field">
     <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
+    <%= f.text_field :start_date %>
   </div>
   <div class="field">
     <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
+    <%= f.text_field :end_date %>
   </div>
   <div class="field">
     <%= f.label :qa_date %><br />
-    <%= f.date_select :qa_date %>
+    <%= f.text_field :qa_date %>
   </div>
   <div class="field">
     <%= f.label :changes_layouts %><br />
@@ -73,7 +73,7 @@
   </div>
   <div class="field">
     <%= f.label :issue %><br />
-    <%= f.select :rework, Project::ISSUES, :prompt => "Select Issue" %>
+    <%= f.select :issue, Project::ISSUES, :prompt => "Select Issue" %>
   </div>
   <div class="field">
     <%= f.label :notes %><br />

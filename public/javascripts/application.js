@@ -7,7 +7,13 @@ $(document).ready(function() {
 	$(".tab_content").hide(); //Hide all content
 	$("ul.tabs li:first").addClass("active").show(); //Activate first tab
 	$(".tab_content:first").show(); //Show first tab content
-	$("#project_contract_start").jdPicker();
+	
+	//date pickers for date fields
+	$("#project_contract_start").datepicker();
+	$("#project_contract_end").datepicker();
+	$("#project_start_date").datepicker();
+	$("#project_end_date").datepicker();
+	$("#project_qa_date").datepicker();
 
 	//On Click Event
 	$("ul.tabs li").click(function() {

@@ -1,0 +1,142 @@
+<h1> <%=@project.title %> </h1>
+
+			<ul class="tabs">
+				<li><a href="#tab1">Summary</a></li>
+				<li><a href="#tab2">Key Dates</a></li>
+				<li><a href="#tab3">Issues/Reworks</a></li>
+				<li><a href="#tab4">Resources </a></li>  
+				
+			</ul>
+
+			<div class="tab_container">
+			<!-- This is where you create your tabs and place the content inside each div -->
+			
+			<%= form_for(@project) do |f| %>
+			  <% if @project.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+			
+			      <ul>
+			      <% @project.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+				
+				<div id="tab1" class="tab_content">
+					<br/>
+					<div class = "grid_4">
+						
+						<p>
+							 <%= f.label :client_id %><br />
+	     					 <%= collection_select(:project, :client_id, Client.all, :id, :name) %> 
+     					 </p>
+     					 
+     					 
+     					<p>	 
+	   						 <%= f.label :frequency %><br />
+	    					 <%= f.select :frequency, Project::FREQUENCIES, :prompt => "Select Frequency" %>
+    					 </p>
+    					 
+    					 <p>
+	    					 <%= f.label :project_type %><br />
+	    					 <%= f.select :project_type, Project::TYPES, :prompt => "Select Type" %> 
+ 						 </p>
+					</div>
+					
+					<div class="grid_4">
+						<p>
+							<%= f.label :sales_rep %><br />
+	    					<%= f.text_field :sales_rep %>
+    					</p>
+    					
+    					<p>
+	    					<%= f.label :developer %><br />
+	   					 	<%= f.text_field :developer %>
+   						</p>	
+   						
+   						<p>
+	   						<%= f.label :ba %><br />
+	    					<%= f.text_field :ba %>
+    					</p>
+   					</div>
+								
+				</div>
+				<div id="tab2" class="tab_content">
+					<br/>
+					<div class="grid_4">
+						<p>
+							<%= f.label :contract_start %><br />
+	    					<%= f.text_field :contract_start  %>
+    					</p>	
+    					
+    					<p>
+	    					<%= f.label :contract_end %><br />
+	    					<%= f.text_field :contract_end %>
+						</p>
+					</div>
+					
+					<div class="grid_4">
+						<p>
+							 <%= f.label :start_date %><br />
+	    					 <%= f.text_field :start_date %>
+    					 </p>
+    					 
+    					 <p>
+	    					  <%= f.label :qa_date %><br />
+	    					  <%= f.text_field :qa_date %>
+    					 </p>
+    					 
+    					 <p>
+	    					  <%= f.label :end_date %><br />
+	    					  <%= f.text_field :end_date %>
+    					  </p>
+					</div>
+				</div>
+				
+				<div id="tab3" class="tab_content">
+					<br/>
+					<div class="grid_4">
+						<p>
+							 <%= f.label :changes_layouts %><br />
+	    					 <%= f.text_area :changes_layouts, :cols => "30", :rows => "9" %>
+    					 </p>
+    					 
+    					 <p>
+	    					<%= f.label :changes_codes %><br />
+	    					<%= f.text_area :changes_codes, :cols => "30", :rows => "9" %>
+    					</p>
+					</div>
+					
+					<div class="grid_4">
+						<p>
+							<%= f.label :rework %><br />
+	    					<%= f.select :rework, Project::REWORKS, :prompt => "Select Rework" %>
+    					</p>
+    					
+    					<p>
+	    					 <%= f.label :issue %><br />
+	    					 <%= f.select :issue, Project::ISSUES, :prompt => "Select Issue" %>
+    					 </p>
+    					<p>
+							 <%= f.label :notes %><br />
+	    					 <%= f.text_area :notes, :cols => "30", :rows => "9" %>
+    					 </p>
+					</div>
+				</div>
+				
+				<div id="tab4" class="tab_content">
+					<br/>
+					<div class="grid_4">
+				    	<p> Use this tab to store things like contact info, file links, documentation, etc. </p>
+				    </div>
+				</div>
+				
+				<input type="submit" value="Save" class="sexybutton sexysimple sexygreen right" />
+				<br/>
+				<br/>
+				<a href="/projects" class="sexybutton sexysimple sexyred right"> Back </a>
+			</div>
+			
+		<% end %>
