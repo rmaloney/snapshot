@@ -1,4 +1,4 @@
-class ClientsController < ApplicationController
+class ClientsController < AuthorizedController
   # GET /clients
   # GET /clients.xml
   def index

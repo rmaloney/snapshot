@@ -30,6 +30,7 @@
 
 <!-- Begin Header -->
 	<div class="grid_12">
+		
 		<div id="user_nav" style="font-size: 12px;" class = "left">
 							<% if user_signed_in? %>  
 								Signed in as <%= current_user.email %>.  
@@ -58,13 +59,14 @@
 				<%= image_tag ('hms_logo.png') %>
 			</h1>
 			
-				<%= form_tag projects_path, :method => 'get', :id => "search_bar", :class => "left", :size => "30" do %>
+				<%= form_tag projects_path, :method => 'get', :id => "search_bar",  :size => "25" do %>
 						<%= hidden_field_tag :direction, params[:direction] %>  
 						<%= hidden_field_tag :sort, params[:sort] %>
-						
+						<button class="sexybutton sexysimple sexyreds"> Search </button>			
 			<%= text_field_tag :search, params[:search], :id => "search_bar", :class => "default-value", :value => "Search..." %>
-							<button class="sexybutton sexysimple sexyred"> Search </button>
+							
 			<% end %>
+			
 			
 				
 			

@@ -2,6 +2,20 @@
 // This file is automatically included by javascript_include_tag :defaults
 
 $(document).ready(function() {
+	
+	//sorting on rows in #projects_table
+	$(function () {  
+  		$('#projects_table th a').live('click', function () {  
+	    $.getScript(this.href);  
+	    return false;  
+  		});  
+  		
+  		  // Search form.  
+	  $('#search_bar').submit(function () {  
+	    $.get(this.action, $(this).serialize(), null, 'script');  
+	    return false;  
+	  });
+	})
 
 	//When page loads...
 	$(".tab_content").hide(); //Hide all content
@@ -26,5 +40,7 @@ $(document).ready(function() {
 		$(activeTab).fadeIn(); //Fade in the active ID content
 		return false;
 	});
+	
+
 
 });

@@ -141,7 +141,7 @@ s}
 ----------------------------------------------*/
 
 #user_nav
-{float:right;}
+{float:left;}
 
 #user_nav a{
 	color:#a90329;
@@ -345,6 +345,7 @@ padding: 3px;
 	font-size: 1em;
 	width: 55%;
 	padding: 3px;
+	float: left;
 }
 
 #keyword_search{
