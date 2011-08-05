@@ -1,5 +1,7 @@
 <h1> <%=@project.title %> </h1>
 
+<%= link_to "Edit Project", edit_project_path(@project), :class => "sexybutton sexysimple sexyblue right" %>
+
 			<ul class="tabs">
 				<li><a href="#tab1">Summary</a></li>
 				<li><a href="#tab2">Key Dates</a></li>
@@ -10,32 +12,32 @@
 
 			<div class="tab_container">
 			<!-- This is where you create your tabs and place the content inside each div -->
-
+			
 				<div id="tab1" class="tab_content">
 					<br/>
 					<div class = "grid_4">
-						<p><%= @project.client.name %></p>
-						<p><%= @project.frequency %></p>
-						<p><%= @project.notes %></p>
+						<p><strong>Client</strong> <br/><%= @project.client.name %></p>
+						<p><strong>Frequency</strong> <br/><%= @project.frequency %></p>
+						<p><strong>Notes</strong> <br/> <%= @project.notes %></p>
 					</div>
 					
 					<div class="grid_4">
-						<p><%= @project.title %></p>
-						<p><%= @project.project_type %>
+						<p><strong>Title</strong> <br/><%= @project.title %></p>
+						<p><strong>Type</strong> <br/> <%= @project.project_type %>
 					</div>
 								
 				</div>
 				<div id="tab2" class="tab_content">
 
 					<div class="grid_4">
-						<p><%= @project.contract_start %></p>
-						<p><%= @project.contract_end %>
+						<p><strong>Contract Star</strong>t<br/><%= @project.contract_start %></p>
+						<p><strong>Contract End</strong><br/><%= @project.contract_end %>
 					</div>
 					
 					<div class="grid_4">
-						<p><%= @project.start_date %></p>
-						<p><%= @project.qa_date %>
-						<p><%= @project.end_date %>
+						<p><strong>Start Date</strong><br/><%= @project.start_date %></p>
+						<p><strong>QA Date<br/></strong><%= @project.qa_date %>
+						<p><strong>End Date</strong><br/><%= @project.end_date %>
 					</div>
 						
 						
@@ -43,14 +45,14 @@
 				
 				<div id="tab3" class="tab_content">
 					<div class="grid_4">
-						<p><%= @project.changes_codes %></p>
-						<p><%= @project.changes_layouts %></p>
-						<p><%= @project.rework %></p>
+						<p><strong>Code Changes</strong><br/><%= @project.changes_codes %></p>
+						<p><strong>Layout Changes</strong><br/><%= @project.changes_layouts %></p>
+						<p><strong>Reworks</strong><br/><%= @project.rework %></p>
 					</div>
 					
 					<div class="grid_4">
-						<p><%= @project.issue %></p>
-						<p><%= @project.notes %></p>
+						<p><strong>Issues</strong><br/><%= @project.issue %></p>
+						<p><strong>Notes</strong> <br/><%= @project.notes %></p>
 						
 					</div>
 					

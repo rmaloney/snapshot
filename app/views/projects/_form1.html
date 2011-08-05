@@ -10,7 +10,7 @@
 
 			<div class="tab_container">
 			<!-- This is where you create your tabs and place the content inside each div -->
-			
+			<div id="project_form">
 			<%= form_for(@project) do |f| %>
 			  <% if @project.errors.any? %>
 			    <div id="error_explanation">
@@ -29,35 +29,39 @@
 					<div class = "grid_4">
 						
 						<p>
-							 <%= f.label :client_id %><br />
+							<strong> <%= f.label :client_id %></strong><br />
 	     					 <%= collection_select(:project, :client_id, Client.all, :id, :name) %> 
      					 </p>
      					 
      					 
      					<p>	 
-	   						 <%= f.label :frequency %><br />
+	   						 <strong><%= f.label :frequency %></strong><br />
 	    					 <%= f.select :frequency, Project::FREQUENCIES, :prompt => "Select Frequency" %>
     					 </p>
     					 
     					 <p>
-	    					 <%= f.label :project_type %><br />
+	    					 <strong><%= f.label :project_type %></strong><br />
 	    					 <%= f.select :project_type, Project::TYPES, :prompt => "Select Type" %> 
  						 </p>
 					</div>
 					
 					<div class="grid_4">
 						<p>
-							<%= f.label :sales_rep %><br />
+							<strong><%= f.label :title %></strong><br/>
+							<%= f.text_field :title %>
+						</p>
+						<p>
+							<strong><%= f.label :sales_rep %></strong><br />
 	    					<%= f.text_field :sales_rep %>
     					</p>
     					
     					<p>
-	    					<%= f.label :developer %><br />
+	    					<strong><%= f.label :developer %></strong><br />
 	   					 	<%= f.text_field :developer %>
    						</p>	
    						
    						<p>
-	   						<%= f.label :ba %><br />
+	   						<strong><%= f.label :ba %></strong><br />
 	    					<%= f.text_field :ba %>
     					</p>
    					</div>
@@ -67,29 +71,29 @@
 					<br/>
 					<div class="grid_4">
 						<p>
-							<%= f.label :contract_start %><br />
+							<strong><%= f.label :contract_start %></strong><br />
 	    					<%= f.text_field :contract_start  %>
     					</p>	
     					
     					<p>
-	    					<%= f.label :contract_end %><br />
+	    					<strong><%= f.label :contract_end %></strong><br />
 	    					<%= f.text_field :contract_end %>
 						</p>
 					</div>
 					
 					<div class="grid_4">
 						<p>
-							 <%= f.label :start_date %><br />
+							 <strong><%= f.label :start_date %></strong><br />
 	    					 <%= f.text_field :start_date %>
     					 </p>
     					 
     					 <p>
-	    					  <%= f.label :qa_date %><br />
+	    					 <strong> <%= f.label :qa_date %></strong><br />
 	    					  <%= f.text_field :qa_date %>
     					 </p>
     					 
     					 <p>
-	    					  <%= f.label :end_date %><br />
+	    					 <strong> <%= f.label :end_date %></strong><br />
 	    					  <%= f.text_field :end_date %>
     					  </p>
 					</div>
@@ -99,28 +103,28 @@
 					<br/>
 					<div class="grid_4">
 						<p>
-							 <%= f.label :changes_layouts %><br />
+							 <strong><%= f.label :changes_layouts %></strong><br />
 	    					 <%= f.text_area :changes_layouts, :cols => "30", :rows => "9" %>
     					 </p>
     					 
     					 <p>
-	    					<%= f.label :changes_codes %><br />
+	    					<strong><%= f.label :changes_codes %></strong><br />
 	    					<%= f.text_area :changes_codes, :cols => "30", :rows => "9" %>
     					</p>
 					</div>
 					
 					<div class="grid_4">
 						<p>
-							<%= f.label :rework %><br />
+							<strong><%= f.label :rework %></strong><br />
 	    					<%= f.select :rework, Project::REWORKS, :prompt => "Select Rework" %>
     					</p>
     					
     					<p>
-	    					 <%= f.label :issue %><br />
+	    					<strong> <%= f.label :issue %></strong><br />
 	    					 <%= f.select :issue, Project::ISSUES, :prompt => "Select Issue" %>
     					 </p>
     					<p>
-							 <%= f.label :notes %><br />
+							<strong> <%= f.label :notes %></strong><br />
 	    					 <%= f.text_area :notes, :cols => "30", :rows => "9" %>
     					 </p>
 					</div>
@@ -133,10 +137,10 @@
 				    </div>
 				</div>
 				
-				<input type="submit" value="Save" class="sexybutton sexysimple sexygreen right" />
+				<input type="submit" value="Save Project" class="sexybutton sexysimple sexygreen right" />
 				<br/>
 				<br/>
-				<a href="/projects" class="sexybutton sexysimple sexyred right"> Back </a>
+				<a href="/projects" class="sexybutton sexysimple sexyred right"> Go Back </a>
 			</div>
-			
+			</div>
 		<% end %>

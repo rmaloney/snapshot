@@ -277,6 +277,14 @@ h2#page-heading {
 	background: #fdffce; /*#FFE3C9;*/
 }
 
+/* form styles
+------------------------------------*/
+
+#project_form {
+	padding: 5px;
+	border: 1px solid #444;
+	min-height: 450px;
+}
 
 /* tabs 
 -------------------------------------*/
