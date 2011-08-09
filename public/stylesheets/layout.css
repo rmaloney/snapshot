@@ -245,7 +245,10 @@ h2#page-heading {
 #projects_table th{
 	border: 1px solid #444;
 	padding: 5px;
+	background: #8F0000;
+	color: white;
 }
+#projects_table th a{ color: white;}
 
 #projects_table th .current {  
 	  padding-right: 12px;  
@@ -274,7 +277,7 @@ h2#page-heading {
 }
 
 .odd {
-	background: #fdffce; /*#FFE3C9;*/
+	background: #E5E1A8;
 }
 
 /* form styles
@@ -283,7 +286,22 @@ h2#page-heading {
 #project_form {
 	padding: 5px;
 	border: 1px solid #444;
-	min-height: 450px;
+	min-height: 425px;
+	
+}
+
+#project_form input, #project_form textarea, #project_form select {
+	border: 1px solid #6E6A5B;
+	padding: 3px;
+}
+
+#project_form input:hover{
+	
+	
+}
+
+#project_form input:focus, #project_form textarea:focus, #project_form select:focus{
+	border: 1px solid green;
 }
 
 /* tabs 
@@ -333,6 +351,9 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 	padding-top: 5px;
 }
 
+.tab_content{
+}
+
 /* images 
 --------------------------------------*/
 
@@ -359,6 +380,8 @@ padding: 3px;
 
 #search_bar input{
 	border: 1px solid #444;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
 }
 
 .defaultText { width: 300px; }

@@ -20,7 +20,7 @@
 * The following variables may be adjusted
 */
 var active_color = '#000'; // Colour of user provided text
-var inactive_color = '#444'; // Colour of default text
+var inactive_color = '#ccc'; // Colour of default text
 
 /**
 * No need to modify anything below this line
@@ -71,10 +71,9 @@ $(document).ready(function() {
 							<% if user_signed_in? %>  
 								Signed in as <%= current_user.email %>.  
 								<%= link_to "Sign out", destroy_user_session_path %>  | <%= link_to "Account Settings", edit_user_registration_path %>
-						  <% else %>  
+							<% else %>  
 							<p> </p>  
 					<% end %> 
-				
 		</div>
 		
 				
@@ -84,10 +83,10 @@ $(document).ready(function() {
 					<ul class="nav">
 						<li> <a href="/clients"> My Clients</a> </li>
 						<li><a href="/clients"> Clients</a></li>
-						<li> <a href="/projects"> My Projects </a> </li>
-						<li><a href="/projects"> Projects </a </li>
+						<li> <a href="/projects/my_projects"> My Projects </a> </li>
+						<li><a href="/projects"> Projects </a> </li>
 					</ul>
-				</div>
+			</div>
 			
 			
 			
@@ -95,19 +94,15 @@ $(document).ready(function() {
 				<%= image_tag ('hms_logo.png') %>
 			</h1>
 			
-				<%= form_tag projects_path, :method => 'get', :id => "search_bar",   :size => "25" do %>
+				<%= form_tag projects_path, :method => 'get', :id => 'search_bar',  :size => "25" do %>
 						<%= hidden_field_tag :direction, params[:direction] %>  
 						<%= hidden_field_tag :sort, params[:sort] %>
 									
-						<%= text_field_tag :search, params[:search], :id => "search_bar", :value => "Search...", :class => "default-value" %>
+						<%= text_field_tag :search, params[:search], :id => 'search_bar', :value => "Search...", :class => "default-value" %>
+						<input type="submit" class="sexybutton sexysimple right" value="Search" />
 						
-						<button class="sexybutton sexysimple sexyreds right"> Search </button>
 				<% end %>
-			
-			
-				
-			
-				
+						
 		</div>
 			
 	</div>
@@ -126,9 +121,7 @@ $(document).ready(function() {
 		</div>
 	</div>
 	
-	<!-- Sidebar. Remove this to obtain a full length (12 column) layout -->
-		
-	<!-- end sidebar -->
+	
 
 <!-- end main -->
 </div>
@@ -140,12 +133,13 @@ $(document).ready(function() {
 <div class="grid_12" id="site_info">
 	
 	
-<div class="box">
-	<p>Copyright 2011 Health Market Science </p>
+	<div class="box">
+		<p>Copyright 2011 Health Market Science </p>
 
-</div>
-</div>
-<div class="clear"></div>
-</div>
+	</div>
+	
+	</div>
+	<div class="clear"></div>
+	</div>
 
 </html>

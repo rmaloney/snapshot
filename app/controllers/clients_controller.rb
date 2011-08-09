@@ -10,6 +10,9 @@ class ClientsController < AuthorizedController
     end
   end
 
+  def my_clients
+	@clients = Client.find_all_by_user_id(current_user.id)
+  end
   # GET /clients/1
   # GET /clients/1.xml
   def show

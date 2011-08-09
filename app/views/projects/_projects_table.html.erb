@@ -1,14 +1,13 @@
 <table id="projects_table">
   <tr>
-    <th><%= sortable "client", "Client" %></th>
+    <th><%= sortable "@project.client.name", "Client" %></th>
     <th><%= sortable "title", "Title" %></th>
     <th><%= sortable "project_type", "Type" %></th>
 	<th><%= sortable "frequency", "Frequency" %></th>
    
 
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan = "3"></th>
+  
   </tr>
 
 <% @projects.each do |project| %>

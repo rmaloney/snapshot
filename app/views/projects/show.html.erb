@@ -1,6 +1,7 @@
-<h1> <%=@project.title %> </h1>
+<h1> <%= @project.client.name %> - <%=@project.title %> </h1>
 
-<%= link_to "Edit Project", edit_project_path(@project), :class => "sexybutton sexysimple sexyblue right" %>
+		<%= link_to "Edit Project", edit_project_path(@project), :class => "sexybutton sexysimple sexyblue right" %>
+			<div class="tab_container">
 
 			<ul class="tabs">
 				<li><a href="#tab1">Summary</a></li>
@@ -10,59 +11,64 @@
 				
 			</ul>
 
-			<div class="tab_container">
+			<br/>
+				
 			<!-- This is where you create your tabs and place the content inside each div -->
-			
+				<div id ="error_explanation">
+					<ul>
+			      <% @project.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      </ul>
+				</div>
+				
+				
 				<div id="tab1" class="tab_content">
-					<br/>
+					
 					<div class = "grid_4">
-						<p><strong>Client</strong> <br/><%= @project.client.name %></p>
-						<p><strong>Frequency</strong> <br/><%= @project.frequency %></p>
-						<p><strong>Notes</strong> <br/> <%= @project.notes %></p>
+						<p><strong class="replace">Client</strong> <br/><%= @project.client.name %></p>
+						<p><strong class="replace">Frequency</strong> <br/><%= @project.frequency %></p>
+						<p><strong class="replace">Notes</strong> <br/> <%= @project.notes %></p>
 					</div>
 					
 					<div class="grid_4">
-						<p><strong>Title</strong> <br/><%= @project.title %></p>
-						<p><strong>Type</strong> <br/> <%= @project.project_type %>
+						<p><strong class="replace">Title</strong> <br/><%= @project.title %></p>
+						<p><strong class="replace">Type</strong> <br/> <%= @project.project_type %>
 					</div>
 								
 				</div>
 				<div id="tab2" class="tab_content">
-
 					<div class="grid_4">
-						<p><strong>Contract Star</strong>t<br/><%= @project.contract_start %></p>
-						<p><strong>Contract End</strong><br/><%= @project.contract_end %>
+						<p><strong class="replace">Contract Star</strong>t<br/><%= @project.contract_start %></p>
+						<p><strong class="replace">Contract End</strong><br/><%= @project.contract_end %>
 					</div>
 					
 					<div class="grid_4">
-						<p><strong>Start Date</strong><br/><%= @project.start_date %></p>
-						<p><strong>QA Date<br/></strong><%= @project.qa_date %>
-						<p><strong>End Date</strong><br/><%= @project.end_date %>
+						<p><strong class="replace">Start Date</strong><br/><%= @project.start_date %></p>
+						<p><strong class="replace">QA Date<br/></strong><%= @project.qa_date %>
+						<p><strong class="replace">End Date</strong><br/><%= @project.end_date %>
 					</div>
-						
-						
 				</div>
 				
 				<div id="tab3" class="tab_content">
 					<div class="grid_4">
-						<p><strong>Code Changes</strong><br/><%= @project.changes_codes %></p>
-						<p><strong>Layout Changes</strong><br/><%= @project.changes_layouts %></p>
-						<p><strong>Reworks</strong><br/><%= @project.rework %></p>
+						<p><strong class="replace">Code Changes</strong><br/><%= @project.changes_codes %></p>
+						<p><strong class="replace">Layout Changes</strong><br/><%= @project.changes_layouts %></p>
+						<p><strong class="replace">Reworks</strong><br/><%= @project.rework %></p>
 					</div>
 					
 					<div class="grid_4">
-						<p><strong>Issues</strong><br/><%= @project.issue %></p>
-						<p><strong>Notes</strong> <br/><%= @project.notes %></p>
-						
+						<p><strong class="replace">Issues</strong><br/><%= @project.issue %></p>
+						<p><strong class="replace">Notes</strong> <br/><%= @project.notes %></p>
 					</div>
-					
-				  
 				</div>
 				
 				<div id="tab4" class="tab_content">
 				    <p> Use this tab to store things like contact info, file links, documentation, etc. </p>
 				</div>
 				
-			</div>
-			
+				</div>
+				
+		
+		
 		

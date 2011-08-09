@@ -24,7 +24,7 @@
 			    </div>
 			  <% end %>
 				
-			  <div id="project_form">
+			
 				<div id="tab1" class="tab_content">
 					<br/>
 					<div class = "grid_4">
@@ -128,6 +128,7 @@
 							<strong> <%= f.label :notes %></strong><br />
 	    					 <%= f.text_area :notes, :cols => "30", :rows => "9" %>
     					 </p>
+						 <p>  <%= f.hidden_field(:user_id, :value => current_user.id ) %></p>
 					</div>
 				</div>
 				
@@ -142,7 +143,7 @@
 				<input type="submit" value="Save Project" class="sexybutton sexysimple sexygreen right" />
 				<br/>
 				<br/>
-				<button class="sexybutton sexysimple sexyred right" href="/projects"> Go Back </a>
+				<a class="sexybutton sexysimple sexyred right" href="/projects"> Go Back </a>
 			</div>
-			</div>
+			
 		<% end %>

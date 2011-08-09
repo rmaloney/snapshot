@@ -1,11 +1,12 @@
 class ProjectsController < ApplicationController
   helper_method :sort_column, :sort_direction
-
+  skip_before_filter :verify_authenticity_token
 
  # GET /projects
   # GET /projects.xml
   def index
     @projects = Project.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +14,17 @@ class ProjectsController < ApplicationController
       format.js
     end
   end
-
+  
+   def my_projects
+	@projects = Project.find_all_by_user_id(current_user.id).paginate(:per_page => 20, :page => params[:page])
+	@user_id = current_user.id
+		
+		respond_to do |format|
+		  format.html # index.html.erb
+		  format.xml  { render :xml => @csprojects }
+		end
+	end
+  
   # GET /projects/1
   # GET /projects/1.xml
   def show

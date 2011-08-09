@@ -1,6 +1,8 @@
 class Project < ActiveRecord::Base
 	belongs_to :client
-	belongs_to :client
+	belongs_to :user
+	
+	
 
 #Attribute Values. Edit these arrays as needed to populate dropdowns in views
 
@@ -27,9 +29,9 @@ class Project < ActiveRecord::Base
  	 
  	 REWORKS = [
  	 	#displayed      #stored in db
- 	 	["Code Defect", "code_defect"],
+ 	 	["Code Defect", "Code Defect"],
  	 	["Sales", "Sales"],
- 	 	["Delivery", "Deliver"],
+ 	 	["Delivery", "Delivery"],
  	 	["Other", "Other"]
  	]
  	
@@ -46,13 +48,10 @@ class Project < ActiveRecord::Base
   
   def self.search(search)  
 	  if search  
-		where('title LIKE ? OR project_type LIKE ? OR frequency LIKE ? or sales_rep like ?', "%#{search}%", "%#{search}%" ,"%#{search}%", "%#{search}%")
+		where('title LIKE ? OR project_type LIKE ? OR frequency LIKE ?', "%#{search}%", "%#{search}%","%#{search}%")
 	  else  
 		scoped 
 	  end  
    end
-
-
-
 
 end
