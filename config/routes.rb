@@ -10,7 +10,7 @@ Cslifescience::Application.routes.draw do
 
   resources :clients do
   	collection do
-  		get 'my_projects'
+  		get 'my_clients'
   	end
   end
 

@@ -2,7 +2,7 @@ class ClientsController < AuthorizedController
   # GET /clients
   # GET /clients.xml
   def index
-    @clients = Client.all
+    @clients = Client.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -82,5 +82,15 @@ class ClientsController < AuthorizedController
       format.html { redirect_to(clients_url) }
       format.xml  { head :ok }
     end
+  end
+  
+private
+  
+  def sort_column
+    Client.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
   end
 end

@@ -272,6 +272,31 @@ h2#page-heading {
 	background: #E5B259;
 	color: #880000;
 }
+
+#clients_table {
+	width: 100%;
+	border: 1px solid #444;
+	border-collapse: collapse;
+}
+
+#clients_table th{
+	border: 1px solid #444;
+	padding: 5px;
+	background: #060004;
+	color: white;
+}
+#clients_table th a{ color: white;}
+
+#clients_table td{
+	padding: 4px;
+	border: 1px solid #444;
+}
+
+
+#clients_table tr:hover, #projects_table td:hover{
+	background: #E5B259;
+	color: #880000;
+}
 .even {
 	background: #fff;
 }

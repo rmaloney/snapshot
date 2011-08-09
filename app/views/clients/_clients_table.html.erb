@@ -1,0 +1,21 @@
+<table id="clients_table">
+  <tr>
+    <th>Client</th>
+  
+   
+
+    <th colspan = "3"></th>
+  
+  </tr>
+
+<% @clients.each do |client| %>
+  <tr class="<%= cycle('even','odd') %>">
+    <td><%= client.name %></td>
+ 
+ 
+    <td><%= link_to 'Details', client %></td>
+    <td><%= link_to 'Edit', edit_client_path(client) %></td>
+    <td><%= link_to 'Delete', client, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
