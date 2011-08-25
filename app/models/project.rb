@@ -3,6 +3,10 @@ class Project < ActiveRecord::Base
 	belongs_to :user
 	
 	
+	def client_name
+		self.client.name
+	end
+	
 
 #Attribute Values. Edit these arrays as needed to populate dropdowns in views
 
@@ -48,7 +52,7 @@ class Project < ActiveRecord::Base
   
   def self.search(search)  
 	  if search  
-		where('title LIKE ? OR project_type LIKE ? OR frequency LIKE ?', "%#{search}%", "%#{search}%","%#{search}%")
+		where("title LIKE ? OR project_type LIKE ? OR frequency LIKE ?", "%#{search}%", "%#{search}%","%#{search}%")
 	  else  
 		scoped 
 	  end  

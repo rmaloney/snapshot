@@ -326,8 +326,16 @@ h2#page-heading {
 }
 
 #project_form input:focus, #project_form textarea:focus, #project_form select:focus{
-	border: 1px solid green;
-}
+	border: 2px solid green;
+	background: background: rgb(234,239,181); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(234,239,181,1) 0%, rgba(225,233,160,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(234,239,181,1)), color-stop(100%,rgba(225,233,160,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(234,239,181,1) 0%,rgba(225,233,160,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(234,239,181,1) 0%,rgba(225,233,160,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(234,239,181,1) 0%,rgba(225,233,160,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaefb5', endColorstr='#e1e9a0',GradientType=0 ); /* IE6-9 */
+	background: linear-gradient(top, rgba(234,239,181,1) 0%,rgba(225,233,160,1) 100%); /* W3C */;
+	}
 
 /* tabs 
 -------------------------------------*/
@@ -371,12 +379,29 @@ html ul.tabs li.active, html ul.tabs li.active a:hover  { /*--Makes sure that th
 	background: #fff;
 	border-bottom: 1px solid #fff; /*--Makes the active tab look like it's connected with its content--*/
 }
-.tab_container{
-	
-	padding-top: 5px;
+.tab_container {
+	border: 1px solid #999;
+	border-top: none;
+	overflow: hidden;
+	clear: both;
+	float: left; width: 100%;
+	background: #fff;
+	min-height: 450px;
+}
+.tab_content {
+	padding: 20px;
+	font-size: 1.2em;
 }
 
-.tab_content{
+.tab_content input, .tab_content textarea, .tab_content select{
+	padding: 3px;
+	border: 1px solid #474539;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+.tab_content input:focus, .tab_content textarea:focus{
+	background: #FFFCC1;
+	border: 1px solid #474444;
 }
 
 /* images 

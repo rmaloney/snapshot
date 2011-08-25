@@ -94,6 +94,7 @@ $(document).ready(function() {
 				<%= image_tag ('hms_logo.png') %>
 			</h1>
 			
+			
 				<%= form_tag projects_path, :method => 'get', :id => 'search_bar',  :size => "25" do %>
 						<%= hidden_field_tag :direction, params[:direction] %>  
 						<%= hidden_field_tag :sort, params[:sort] %>
@@ -102,6 +103,7 @@ $(document).ready(function() {
 						<input type="submit" class="sexybutton sexysimple right" value="Search" />
 						
 				<% end %>
+		
 						
 		</div>
 			
