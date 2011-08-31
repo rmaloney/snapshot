@@ -16,7 +16,10 @@ class Project < ActiveRecord::Base
 	  	["PxDx-Projections", "PXDX-Projections"],
 	  	["Custom PxDx", "PXDX-Custom"],
 	  	["CDI", "CDI"],
-	  	["Masterfile", "Masterfile"]
+	  	["Masterfile", "Masterfile"],
+	  	["Analytics", "Analytics"],
+	  	["Email", "Email"],
+	  	["Other", "Other"]
  	 ]
  	 
  	 FREQUENCIES = [
@@ -34,8 +37,10 @@ class Project < ActiveRecord::Base
  	 REWORKS = [
  	 	#displayed      #stored in db
  	 	["Code Defect", "Code Defect"],
- 	 	["Sales", "Sales"],
+ 	 	["Sales Initiated", "Sales"],
  	 	["Delivery", "Delivery"],
+ 	 	["Layout", "Layout"],
+ 	 	["Data Quality", "Data Quality"],
  	 	["Other", "Other"]
  	]
  	

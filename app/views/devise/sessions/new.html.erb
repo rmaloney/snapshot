@@ -1,8 +1,8 @@
 <div id="sign_in">
 
-	<h2 class= "red">Sign In</h2>
+	<h2 class="red">Sign In</h2>
 
-	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class=>"edit_form"}) do |f| %>
 	  <p><%= f.label :email %><br />
 	  <%= f.text_field :email %></p>
 
@@ -15,6 +15,6 @@
 	  
 	  <%= link_to "Forgot Password?", new_user_password_path %>
 
-	  <p><%= f.submit "Sign in", :class => "sexybutton sexysimple sexyred" %></p>
+	  <%= f.submit "Sign in", :class => "button" %>
 	<% end %>
 </div>

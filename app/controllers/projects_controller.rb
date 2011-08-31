@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
  # GET /projects
   # GET /projects.xml
   def index
-    @projects = Project.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 5, :page => params[:page])
+    @projects = Project.search(params[:search]).order(sort_column + ' ' + sort_direction).paginate(:per_page => 15, :page => params[:page])
     
 
     respond_to do |format|
