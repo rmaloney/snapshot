@@ -17,13 +17,9 @@
     <td><%= project.project_type %></td>
     <td><%= project.frequency %></td>
  
-    <td>
-    <div class="button-group">
-	    <%= link_to 'Details', project, :class => "button" %>
-	    <%= link_to 'Edit', edit_project_path(project), :class =>"button" %>
-	    <%= link_to 'Delete', project, :confirm => 'Are you sure?', :method => :delete, :class => "button danger" %>
-	</div>
-    </td>
+    <td><%= link_to 'Details', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Delete', project, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
